@@ -2,26 +2,33 @@
 
 
 class Student:
-    def __init__(self, newStudentNumber, newStudentFirstName, newStudentLastName):
-        self._StudentNumber = newStudentNumber
-        self._StudentFirstName = newStudentFirstName
-        self._StudentLastName = newStudentLastName
+    """Store a student number and allow the student's name to be updated."""
 
-    def get_StudentNumber(self):
-        return self._StudentNumber
+    def __init__(
+        self,
+        newStudentNumber: str,
+        newStudentFirstName: str,
+        newStudentLastName: str,
+    ) -> None:
+        self._student_number = newStudentNumber
+        self._student_first_name = newStudentFirstName
+        self._student_last_name = newStudentLastName
 
-    def set_StudentNumber(self, value):
-        # The public interface does not allow changing the student number.
+    def get_StudentNumber(self) -> str:
+        return self._student_number
+
+    def set_StudentNumber(self, value: str) -> None:
+        """Report an attempted change and keep the original student number."""
         print("Error - Cannot Change Student Number")
 
-    def get_StudentFirstName(self):
-        return self._StudentFirstName
+    def get_StudentFirstName(self) -> str:
+        return self._student_first_name
 
-    def set_StudentFirstName(self, value):
-        self._StudentFirstName = value
+    def set_StudentFirstName(self, value: str) -> None:
+        self._student_first_name = value
 
-    def get_StudentLastName(self):
-        return self._StudentLastName
+    def get_StudentLastName(self) -> str:
+        return self._student_last_name
 
-    def set_StudentLastName(self, value):
-        self._StudentLastName = value
+    def set_StudentLastName(self, value: str) -> None:
+        self._student_last_name = value
